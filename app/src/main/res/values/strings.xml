@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name" translatable="false">Football Score Keeper</string>
+    <string name="reset" translatable="false">Reset</string>
+    <string name="team_a">Team A</string>
+    <string name="draw">Draw</string>
+    <string name="goal">Goal</string>
+    <string name="offside">Offside</string>
+    <string name="penalty">Penalty</string>
+    <string name="corner">Corner</string>
+    <string name="foul">Foul</string>
+    <string name="loss">Loss</string>
+    <string name="win">Win</string>
+    <string name="goal_toast">Scored a Goal!</string>
+    <string name="foul_toast">Committed a Foul!</string>
+    <string name="corner_toast">Earned a Corner!</string>
+    <string name="penalty_toast">Gained Penalty Kick!</string>
+    <string name="offside_toast">Was Offside!</string>
+    <string name="team_b">Team B</string>
+    <string name="zero" translatable="false">0</string>
+    <string name="scores_reset">Match Reset!</string>
+</resources>

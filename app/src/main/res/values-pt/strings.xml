@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="team_a">Equipa A</string>
+    <string name="team_b">Equipa B</string>
+    <string name="draw">Empate</string>
+    <string name="goal">Golo</string>
+    <string name="offside">Fora de Jogo</string>
+    <string name="penalty">Pênalti</string>
+    <string name="corner">Canto</string>
+    <string name="foul">Falta</string>
+    <string name="loss">Derrota</string>
+    <string name="win">Vitória</string>
+    <string name="goal_toast">Marcou um Golo!</string>
+    <string name="foul_toast">Cometeu uma Falta!</string>
+    <string name="corner_toast">Ganhou um Canto!</string>
+    <string name="penalty_toast">Ganhou um Pênalti!</string>
+    <string name="offside_toast">Estava Fora de Jogo!</string>
+    <string name="scores_reset">Reset do Jogo!</string>
+</resources>

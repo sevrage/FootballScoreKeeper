@@ -1,0 +1,455 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/field"
+    android:padding="2dp"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/reset_btn"
+            android:layout_width="64dp"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/btn_reset"
+            android:onClick="resetStats"
+            android:text="@string/reset"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/name_team_a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#FFFFFF"
+                    android:hint="@string/team_a"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="#1A237E"
+                    android:textColorHint="#1A237E"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/team_a_goals"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/score_goal"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="@string/zero"
+                        android:textColor="#FFFFFF"
+                        android:textSize="48sp" />
+
+                    <TextView
+                        android:id="@+id/team_a_result"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed"
+                        android:layout_alignBottom="@id/team_a_goals"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="3dp"
+                        android:gravity="center"
+                        android:text="@string/draw"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+
+
+                    <TextView
+                        android:id="@+id/team_a_penalties"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignLeft="@id/team_a_goals"
+                        android:layout_alignTop="@id/team_a_goals"
+                        android:background="@drawable/score_penalty"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/zero"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:layout_alignStart="@id/team_a_goals" />
+
+                    <TextView
+                        android:id="@+id/team_a_offsides"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignRight="@id/team_a_goals"
+                        android:layout_alignTop="@id/team_a_goals"
+                        android:background="@drawable/score_offside"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/zero"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:layout_alignEnd="@id/team_a_goals" />
+
+                    <TextView
+                        android:id="@+id/team_a_corners"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignBottom="@id/team_a_goals"
+                        android:layout_alignLeft="@id/team_a_goals"
+                        android:background="@drawable/score_corner"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/zero"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:layout_alignStart="@id/team_a_goals" />
+
+                    <TextView
+                        android:id="@+id/team_a_fouls"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignBottom="@id/team_a_goals"
+                        android:layout_alignRight="@id/team_a_goals"
+                        android:background="@drawable/score_foul"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/zero"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:layout_alignEnd="@id/team_a_goals" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_team_a_goal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_goal"
+                    android:onClick="goalForTeamX"
+                    android:tag="A"
+                    android:text="@string/goal"
+                    android:textColor="#1A237E"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_team_a_penalty"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_penalty"
+                        android:onClick="penaltyForTeamX"
+                        android:tag="A"
+                        android:text="@string/penalty"
+                        android:textColor="#1A237E"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_team_a_offside"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_offside"
+                        android:onClick="offsideForTeamX"
+                        android:tag="A"
+                        android:text="@string/offside"
+                        android:textColor="#1A237E"
+                        android:textStyle="bold"
+                        android:layout_marginStart="2dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_team_a_corner"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_corner"
+                        android:onClick="cornerForTeamX"
+                        android:tag="A"
+                        android:text="@string/corner"
+                        android:textColor="#1A237E"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_team_a_foul"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_foul"
+                        android:onClick="foulForTeamX"
+                        android:tag="A"
+                        android:text="@string/foul"
+                        android:textColor="#1A237E"
+                        android:textStyle="bold"
+                        android:layout_marginStart="2dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:background="#FFFFFF"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/name_team_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#FFFFFF"
+                    android:hint="@string/team_b"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="#B71C1C"
+                    android:textColorHint="#B71C1C"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/team_b_goals"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/score_goal"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="@string/zero"
+                        android:textColor="#FFFFFF"
+                        android:textSize="48sp" />
+
+                    <TextView
+                        android:id="@+id/team_b_result"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed"
+                        android:layout_alignBottom="@id/team_b_goals"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="3dp"
+                        android:gravity="center"
+                        android:text="@string/draw"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/team_b_penalties"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignLeft="@id/team_b_goals"
+                        android:layout_alignTop="@id/team_b_goals"
+                        android:background="@drawable/score_penalty"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/zero"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:layout_alignStart="@id/team_b_goals" />
+
+                    <TextView
+                        android:id="@+id/team_b_offsides"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignRight="@id/team_b_goals"
+                        android:layout_alignTop="@id/team_b_goals"
+                        android:background="@drawable/score_offside"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/zero"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:layout_alignEnd="@id/team_b_goals" />
+
+                    <TextView
+                        android:id="@+id/team_b_corners"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignBottom="@id/team_b_goals"
+                        android:layout_alignLeft="@id/team_b_goals"
+                        android:background="@drawable/score_corner"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/zero"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:layout_alignStart="@id/team_b_goals" />
+
+                    <TextView
+                        android:id="@+id/team_b_fouls"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignBottom="@id/team_b_goals"
+                        android:layout_alignRight="@id/team_b_goals"
+                        android:background="@drawable/score_foul"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/zero"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:layout_alignEnd="@id/team_b_goals" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_team_b_goal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_goal"
+                    android:onClick="goalForTeamX"
+                    android:tag="B"
+                    android:text="@string/goal"
+                    android:textColor="#B71C1C"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_team_b_penalty"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_penalty"
+                        android:onClick="penaltyForTeamX"
+                        android:tag="B"
+                        android:text="@string/penalty"
+                        android:textColor="#B71C1C"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_team_b_offside"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_offside"
+                        android:onClick="offsideForTeamX"
+                        android:tag="B"
+                        android:text="@string/offside"
+                        android:textColor="#B71C1C"
+                        android:textStyle="bold"
+                        android:layout_marginStart="2dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_team_b_corner"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_corner"
+                        android:onClick="cornerForTeamX"
+                        android:tag="B"
+                        android:text="@string/corner"
+                        android:textColor="#B71C1C"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_team_b_foul"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_foul"
+                        android:onClick="foulForTeamX"
+                        android:tag="B"
+                        android:text="@string/foul"
+                        android:textColor="#B71C1C"
+                        android:textStyle="bold"
+                        android:layout_marginStart="2dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>
